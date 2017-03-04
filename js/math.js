@@ -110,7 +110,7 @@ function CheckResult(op) {
 }
 
 function GetRandom() {
-
+  
   var Fmin = localStorage.Firstmin;
   var Fmax = localStorage.Firstmax;
 
@@ -171,6 +171,15 @@ function Readconf() {
     document.getElementById('autoNew').checked = true;
   }
 }
+if (localStorage.CardLimt == 'false') {
+    document.getElementById('CardLimt').checked = false;
+    document.getElementById('container').removeAttribute("style");
+  } else {
+    document.getElementById('CardLimt').checked = true;
+    ///document.getElementById('container').style.cssText = 'max-width: 500px';
+    document.getElementById('container').setAttribute("style",'max-width: 500px');
+  }
+
 
 function Saveconf() {
   console.log(localStorage.Firstmin, localStorage.Firstmax, localStorage.Secondmin, localStorage.Secondmax);
@@ -186,5 +195,12 @@ function Saveconf() {
     localStorage.Secondmin = Smin;
     localStorage.Secondmax = Smax;
     localStorage.autoNew = document.getElementById('autoNew').checked;
+    localStorage.CardLimt = document.getElementById('CardLimt').checked;
+    if(localStorage.CardLimt == "true"){
+      document.getElementById('container').setAttribute("style",'max-width: 500px');
+    }else{
+      document.getElementById('container').removeAttribute("style");
+    }
   }
+  console.log('saved');
 }
