@@ -86,7 +86,7 @@ function CheckResult(op) {
       break;
     case 5:
       var a = parseInt(document.getElementById('Pinput').value);
-      var b = GetResult(document.getElementById('Pfirst').innerHTML, document.getElementById('Dsecond').innerHTML, 4);
+      var b = GetResult(document.getElementById('Pfirst').innerHTML, document.getElementById('Dsecond').innerHTML, 5);
       document.getElementById('Pinput').value = null;
       break;
   }
