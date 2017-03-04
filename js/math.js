@@ -58,20 +58,22 @@ function CheckResult(op){
       case 1:
        var a = parseInt(document.getElementById('Ainput').value);
        var b = GetResult(document.getElementById('Afirst').innerHTML,document.getElementById('Asecond').innerHTML,1);
-
+       document.getElementById('Ainput').value = null;
        break;
       case 2:
        var a = parseInt(document.getElementById('Sinput').value);
        var b = GetResult(document.getElementById('Sfirst').innerHTML,document.getElementById('Ssecond').innerHTML,2);
-
+       document.getElementById('Sinput').value = null;
        break;
       case 3:
        var a = parseInt(document.getElementById('Minput').value);
        var b = GetResult(document.getElementById('Mfirst').innerHTML,document.getElementById('Msecond').innerHTML,3);
+       document.getElementById('Minput').value = null;
        break;
       case 4:
        var a = parseInt(document.getElementById('Dinput').value);
        var b = GetResult(document.getElementById('Dfirst').innerHTML,document.getElementById('Dsecond').innerHTML,4);
+       document.getElementById('Dinput').value = null;
        break;
     }
     if(a==b){
@@ -87,6 +89,7 @@ function CheckResult(op){
       }
 
     });
+
 }
 function GetRandom(){
 

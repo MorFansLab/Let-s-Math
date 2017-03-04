@@ -1,77 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <title>Let's Math</title>
-  <link rel="stylesheet" type="text/css" href="./css/theme.css" />
+  <link rel="stylesheet" href="./css/theme.css">
 </head>
-<body class="mdui-theme-primary-blue mdui-theme-accent-pink mdui-appbar-with-toolbar mdui-appbar-with-tab" style="padding-top:120px;">
+
+<body class="mdui-theme-primary-blue mdui-theme-accent-pink mdui-appbar-with-toolbar mdui-appbar-with-tab" style="padding-top:120px; background-color: #eee;">
   <header>
     <div class="mdui-appbar mdui-appbar-fixed">
-    <div class="mdui-toolbar mdui-color-theme">
-      <span class="mdui-typo-title">Let's Math</span>
-      <div class="mdui-toolbar-spacer"></div>
-      <a href="javascript:GetRandom();" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '更换题目'}">
-        <i class="mdui-icon material-icons">&#xe5d5;</i>
-      </a>
-      <a href="javascript:;" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '设置'}" mdui-dialog="{target: '#settingDialog'}">
-        <i class="mdui-icon material-icons">&#xe8b8;</i>
-      </a>
-    </div>
-    <div class="mdui-tab mdui-color-theme" mdui-tab>
-      <a href="#add" class="mdui-ripple mdui-ripple-white">加法</a>
-      <a href="#sub" class="mdui-ripple mdui-ripple-white">减法</a>
-      <a href="#mul" class="mdui-ripple mdui-ripple-white">乘法</a>
-      <a href="#division" class="mdui-ripple mdui-ripple-white">除法</a>
-      <a href="#power" class="mdui-ripple mdui-ripple-white" disabled>次方</a>
-    </div>
+      <div class="mdui-toolbar mdui-color-theme">
+        <span class="mdui-typo-title">Let's Math</span>
+        <div class="mdui-toolbar-spacer"></div>
+        <a href="javascript:GetRandom();" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '更换题目'}">
+          <i class="mdui-icon material-icons">&#xe5d5;</i>
+        </a>
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '设置'}" mdui-dialog="{target: '#settingDialog'}">
+          <i class="mdui-icon material-icons">&#xe8b8;</i>
+        </a>
+      </div>
+      <div class="mdui-tab mdui-color-theme" mdui-tab>
+        <a href="#add" class="mdui-ripple mdui-ripple-white">加法</a>
+        <a href="#sub" class="mdui-ripple mdui-ripple-white">减法</a>
+        <a href="#mul" class="mdui-ripple mdui-ripple-white">乘法</a>
+        <a href="#division" class="mdui-ripple mdui-ripple-white">除法</a>
+        <a href="#power" class="mdui-ripple mdui-ripple-white" disabled>次方</a>
+      </div>
     </div>
   </header>
   <div class="mdui-container">
     <div class="mdui-dialog" id="settingDialog">
-  <div class="mdui-dialog-title">Setting</div>
-  <div class="mdui-dialog-content">
-    <div class="mdui-row">
-  <div class="mdui-col-xs-12">第一个数字范围：</div>
-  <div class="mdui-col-xs-6">
-  <div class="mdui-textfield mdui-textfield-floating-label">
-  <label class="mdui-textfield-label">最小值</label>
-  <input id="Fmin" value="1" class="mdui-textfield-input" type="text" pattern="^[1-9]\d*$" required/>
-  <div class="mdui-textfield-error">最小值不能为空</div>
-</div>
-</div>
-  <div class="mdui-col-xs-6">
-      <div class="mdui-textfield mdui-textfield-floating-label">
-  <label class="mdui-textfield-label">最大值</label>
-  <input id="Fmax" value="100" class="mdui-textfield-input" type="text" pattern="^[1-9]\d*$" required/>
-  <div class="mdui-textfield-error">最大值不能为空</div>
-</div>
-  </div>
+      <div class="mdui-dialog-title">Setting</div>
+      <div class="mdui-dialog-content">
+        <div class="mdui-row">
+          <div class="mdui-col-xs-12">第一个数字范围：</div>
+          <div class="mdui-col-xs-6">
+            <div class="mdui-textfield mdui-textfield-floating-label">
+              <label class="mdui-textfield-label">最小值</label>
+              <input id="Fmin" value="1" class="mdui-textfield-input" type="text" pattern="^[1-9]\d*$" required>
+              <div class="mdui-textfield-error">最小值不能为空</div>
+            </div>
+          </div>
+          <div class="mdui-col-xs-6">
+            <div class="mdui-textfield mdui-textfield-floating-label">
+              <label class="mdui-textfield-label">最大值</label>
+              <input id="Fmax" value="100" class="mdui-textfield-input" type="text" pattern="^[1-9]\d*$" required>
+              <div class="mdui-textfield-error">最大值不能为空</div>
+            </div>
+          </div>
+        </div>
+        <div class="mdui-row">
+          <div class="mdui-col-xs-12">第二个数字范围：</div>
+          <div class="mdui-col-xs-6">
+            <div class="mdui-textfield mdui-textfield-floating-label">
+              <label class="mdui-textfield-label">最小值</label>
+              <input id="Smin" value="1" class="mdui-textfield-input" type="text" required>
+              <div class="mdui-textfield-error">最小值不能为空</div>
+            </div>
+          </div>
+          <div class="mdui-col-xs-6">
+            <div class="mdui-textfield mdui-textfield-floating-label">
+              <label class="mdui-textfield-label">最大值</label>
+              <input id="Smax" value="100" class="mdui-textfield-input" type="text" pattern="^[1-9]\d*$" required>
+              <div class="mdui-textfield-error">最大值不能为空</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mdui-dialog-actions">
+        <button class="mdui-btn mdui-ripple" mdui-dialog-close>cancel</button>
+        <button onclick="Saveconf();" class="mdui-btn mdui-ripple" mdui-dialog-confirm>Save</button>
+      </div>
     </div>
-    <div class="mdui-row">
-  <div class="mdui-col-xs-12">第二个数字范围：</div>
-  <div class="mdui-col-xs-6">
-      <div class="mdui-textfield mdui-textfield-floating-label">
-  <label class="mdui-textfield-label">最小值</label>
-  <input id="Smin" value="1" class="mdui-textfield-input" type="text" required/>
-  <div class="mdui-textfield-error">最小值不能为空</div>
-</div>
-  </div>
-  <div class="mdui-col-xs-6">
-      <div class="mdui-textfield mdui-textfield-floating-label">
-  <label class="mdui-textfield-label">最大值</label>
-  <input id="Smax" value="100" class="mdui-textfield-input" type="text" pattern="^[1-9]\d*$" required/>
-  <div class="mdui-textfield-error">最大值不能为空</div>
-</div>
-  </div>
-    </div>
-  </div>
-  <div class="mdui-dialog-actions">
-    <button class="mdui-btn mdui-ripple" mdui-dialog-close>cancel</button>
-    <button onclick="Saveconf();" class="mdui-btn mdui-ripple" mdui-dialog-confirm>Save</button>
-  </div>
-</div>
     <div id="add">
       <div class="mdui-card">
         <div class="mdui-card-primary">
@@ -100,16 +102,16 @@
               <div class="mdui-col-xs-2">
               </div>
               <div class="mdui-col-xs-10">
-                <span  id="Asecond" class="mdui-typo-display-1">4568</span>
+                <span id="Asecond" class="mdui-typo-display-1">4568</span>
               </div>
             </div>
             <div class="mdui-row">
               <div class="mdui-col-xs-12">
                 <div class="mdui-textfield mdui-textfield-floating-label">
-                <label class="mdui-textfield-label">结果</label>
-                <input id="Ainput" class="mdui-textfield-input" maxlength="60" type="text" pattern="^[1-9]\d*$" required/>
-                <div class="mdui-textfield-error">结果不能为空</div>
-</div>
+                  <label class="mdui-textfield-label">结果</label>
+                  <input id="Ainput" class="mdui-textfield-input" maxlength="60" type="text" pattern="^[1-9]\d*$" required>
+                  <div class="mdui-textfield-error">结果不能为空</div>
+                </div>
               </div>
             </div>
           </div>
@@ -130,7 +132,7 @@
             减法运算
           </div>
           <div class="mdui-card-content">
-                        <div class="mdui-row">
+            <div class="mdui-row">
               <div class="mdui-col-xs-2">
               </div>
               <div class="mdui-col-xs-10">
@@ -154,10 +156,10 @@
             <div class="mdui-row">
               <div class="mdui-col-xs-12">
                 <div class="mdui-textfield mdui-textfield-floating-label">
-                <label class="mdui-textfield-label">结果</label>
-                <input id="Sinput" class="mdui-textfield-input" maxlength="60" type="number" pattern="^[1-9]\d*$" required/>
-                <div class="mdui-textfield-error">结果不能为空</div>
-</div>
+                  <label class="mdui-textfield-label">结果</label>
+                  <input id="Sinput" class="mdui-textfield-input" maxlength="60" type="number" pattern="^[1-9]\d*$" required>
+                  <div class="mdui-textfield-error">结果不能为空</div>
+                </div>
               </div>
             </div>
           </div>
@@ -178,7 +180,7 @@
             乘法运算
           </div>
           <div class="mdui-card-content">
-                        <div class="mdui-row">
+            <div class="mdui-row">
               <div class="mdui-col-xs-2">
               </div>
               <div class="mdui-col-xs-10">
@@ -202,10 +204,10 @@
             <div class="mdui-row">
               <div class="mdui-col-xs-12">
                 <div class="mdui-textfield mdui-textfield-floating-label">
-                <label class="mdui-textfield-label">结果</label>
-                <input id="Minput" class="mdui-textfield-input" maxlength="60" type="text" pattern="^[1-9]\d*$" required/>
-                <div class="mdui-textfield-error">结果不能为空</div>
-</div>
+                  <label class="mdui-textfield-label">结果</label>
+                  <input id="Minput" class="mdui-textfield-input" maxlength="60" type="text" pattern="^[1-9]\d*$" required>
+                  <div class="mdui-textfield-error">结果不能为空</div>
+                </div>
               </div>
             </div>
           </div>
@@ -226,7 +228,7 @@
             除法运算
           </div>
           <div class="mdui-card-content">
- <div class="mdui-row">
+            <div class="mdui-row">
               <div class="mdui-col-xs-2">
               </div>
               <div class="mdui-col-xs-10">
@@ -250,12 +252,12 @@
             <div class="mdui-row">
               <div class="mdui-col-xs-12">
                 <div class="mdui-textfield mdui-textfield-floating-label">
-                <label class="mdui-textfield-label">结果</label>
-                <input id="Dinput" class="mdui-textfield-input" maxlength="60" type="text" pattern="^[1-9]\d*$" required/>
-                <div class="mdui-textfield-error">结果不能为空</div>
-</div>
+                  <label class="mdui-textfield-label">结果</label>
+                  <input id="Dinput" class="mdui-textfield-input" maxlength="60" type="text" pattern="^[1-9]\d*$" required>
+                  <div class="mdui-textfield-error">结果不能为空</div>
+                </div>
               </div>
-            </div>           
+            </div>
           </div>
           <div class="mdui-card-actions">
             <button onclick="CheckResult(4);" class="mdui-btn mdui-ripple mdui-float-right">提交结果</button>
@@ -265,13 +267,13 @@
       </div>
     </div>
     <!--<button class="mdui-fab mdui-color-theme-accent mdui-fab-fixed mdui-ripple"><i class="mdui-icon material-icons">&#xe145;</i></button>-->
-    
 
-<!--<div class="mdui-fab-wrapper" id="exampleFab" mdui-fab="{trigger: 'hover'}">
+
+    <!--<div class="mdui-fab-wrapper" id="exampleFab" mdui-fab="{trigger: 'hover'}">
   <button class="mdui-fab mdui-ripple mdui-color-theme-accent">-->
     <!-- 默认显示的图标 -->
     <!-- <i class="mdui-icon material-icons">&#xe145;</i>-->
-    
+
     <!-- 在拨号菜单开始打开时，平滑切换到该图标，若不需要切换图标，则可以省略该元素 -->
     <!--<i class="mdui-icon mdui-fab-opened material-icons">&#xe254;</i>
   </button>
@@ -285,15 +287,16 @@
 
 
   </div>-->
-  <!--<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.slim.js"></script>-->
-  <script src="./js/main.js"></script>
-  <script src="./js/math.js"></script>
-  <!--<script src="./js/fuction.js"></script>-->
-  <script>
-  window.onload=function(){
-    Readconf();
-    setTimeout(GetRandom(), 1000);
-  } 
-  </script>
+    <!--<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.slim.js"></script>-->
+    <script src="./js/main.js"></script>
+    <script src="./js/math.js"></script>
+    <!--<script src="./js/fuction.js"></script>-->
+    <script>
+                             window.onload = function () {
+                               Readconf();
+                               setTimeout(GetRandom(), 1000);
+                             }
+    </script>
 </body>
+
 </html>
