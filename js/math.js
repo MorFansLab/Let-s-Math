@@ -93,6 +93,9 @@ function CheckResult(op) {
 
   if (a == b) {
     var c = '恭喜你，答对了！';
+    if (localStorage.autoNew == 'true') {
+      GetRandom();
+    }
   } else {
     var c = '答错了，再试试？';
   }
@@ -162,6 +165,11 @@ function Readconf() {
   } else {
     document.getElementById('Smax').value = localStorage.Secondmax;
   }
+  if (localStorage.autoNew == 'false') {
+    document.getElementById('autoNew').checked = false;
+  } else {
+    document.getElementById('autoNew').checked = true;
+  }
 }
 
 function Saveconf() {
@@ -170,12 +178,13 @@ function Saveconf() {
   var Fmax = document.getElementById('Fmax').value;
   var Smin = document.getElementById('Smin').value;
   var Smax = document.getElementById('Smax').value;
-  if (Fmin.length == 0 || Fmax.value.length == 0 || Smin.value.length == 0 || Smax.value.length == 0) {
+  if (Fmin.length == 0 || Fmax.length == 0 || Smin.length == 0 || Smax.length == 0) {
     mdui.alert('抱歉，信息填写不完整！');
   } else {
     localStorage.Firstmin = Fmin;
     localStorage.Firstmax = Fmax;
     localStorage.Secondmin = Smin;
     localStorage.Secondmax = Smax;
+    localStorage.autoNew = document.getElementById('autoNew').checked;
   }
 }
