@@ -39,15 +39,15 @@
           <div class="mdui-col-xs-6">
             <div class="mdui-textfield mdui-textfield-floating-label">
               <label class="mdui-textfield-label">最小值</label>
-              <input id="Fmin" value="1" class="mdui-textfield-input" type="text" pattern="^[1-9]\d*$" required>
-              <div class="mdui-textfield-error">最小值不能为空</div>
+              <input id="Fmin" value="1" class="mdui-textfield-input" type="number" required>
+              <div class="mdui-textfield-error">请输入正确的数字</div>
             </div>
           </div>
           <div class="mdui-col-xs-6">
             <div class="mdui-textfield mdui-textfield-floating-label">
               <label class="mdui-textfield-label">最大值</label>
-              <input id="Fmax" value="100" class="mdui-textfield-input" type="text" pattern="^[1-9]\d*$" required>
-              <div class="mdui-textfield-error">最大值不能为空</div>
+              <input id="Fmax" value="100" class="mdui-textfield-input" type="number" required>
+              <div class="mdui-textfield-error">请输入正确的数字</div>
             </div>
           </div>
         </div>
@@ -56,15 +56,15 @@
           <div class="mdui-col-xs-6">
             <div class="mdui-textfield mdui-textfield-floating-label">
               <label class="mdui-textfield-label">最小值</label>
-              <input id="Smin" value="1" class="mdui-textfield-input" type="text" required>
-              <div class="mdui-textfield-error">最小值不能为空</div>
+              <input id="Smin" value="1" class="mdui-textfield-input" type="number" required>
+              <div class="mdui-textfield-error">请输入正确的数字</div>
             </div>
           </div>
           <div class="mdui-col-xs-6">
             <div class="mdui-textfield mdui-textfield-floating-label">
               <label class="mdui-textfield-label">最大值</label>
-              <input id="Smax" value="100" class="mdui-textfield-input" type="text" pattern="^[1-9]\d*$" required>
-              <div class="mdui-textfield-error">最大值不能为空</div>
+              <input id="Smax" value="100" class="mdui-textfield-input" type="number" required>
+              <div class="mdui-textfield-error">请输入正确的数字</div>
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@
               <div class="mdui-col-xs-1">
               </div>
               <div class="mdui-col-xs-11">
-                <span class="mdui-typo-display-1-opacity">+</span>
+                <span class="mdui-typo-display-1-opacity">＋</span>
               </div>
             </div>
             <div class="mdui-row">
@@ -109,8 +109,8 @@
               <div class="mdui-col-xs-12">
                 <div class="mdui-textfield mdui-textfield-floating-label">
                   <label class="mdui-textfield-label">结果</label>
-                  <input id="Ainput" class="mdui-textfield-input" maxlength="60" type="text" pattern="^[1-9]\d*$" required>
-                  <div class="mdui-textfield-error">结果不能为空</div>
+                  <input id="Ainput" class="mdui-textfield-input" maxlength="60" type="number" required>
+                  <div class="mdui-textfield-error">请输入正确的数字</div>
                 </div>
               </div>
             </div>
@@ -157,8 +157,8 @@
               <div class="mdui-col-xs-12">
                 <div class="mdui-textfield mdui-textfield-floating-label">
                   <label class="mdui-textfield-label">结果</label>
-                  <input id="Sinput" class="mdui-textfield-input" maxlength="60" type="number" pattern="^[1-9]\d*$" required>
-                  <div class="mdui-textfield-error">结果不能为空</div>
+                  <input id="Sinput" class="mdui-textfield-input" maxlength="60" type="number" required>
+                  <div class="mdui-textfield-error">请输入正确的数字</div>
                 </div>
               </div>
             </div>
@@ -205,8 +205,8 @@
               <div class="mdui-col-xs-12">
                 <div class="mdui-textfield mdui-textfield-floating-label">
                   <label class="mdui-textfield-label">结果</label>
-                  <input id="Minput" class="mdui-textfield-input" maxlength="60" type="text" pattern="^[1-9]\d*$" required>
-                  <div class="mdui-textfield-error">结果不能为空</div>
+                  <input id="Minput" class="mdui-textfield-input" maxlength="60" type="number" required>
+                  <div class="mdui-textfield-error">请输入正确的数字</div>
                 </div>
               </div>
             </div>
@@ -253,8 +253,8 @@
               <div class="mdui-col-xs-12">
                 <div class="mdui-textfield mdui-textfield-floating-label">
                   <label class="mdui-textfield-label">结果</label>
-                  <input id="Dinput" class="mdui-textfield-input" maxlength="60" type="text" pattern="^[1-9]\d*$" required>
-                  <div class="mdui-textfield-error">结果不能为空</div>
+                  <input id="Dinput" class="mdui-textfield-input" maxlength="60" type="number" required>
+                  <div class="mdui-textfield-error">请输入正确的数字</div>
                 </div>
               </div>
             </div>
@@ -292,10 +292,8 @@
     <script src="./js/math.js"></script>
     <!--<script src="./js/fuction.js"></script>-->
     <script>
-                             window.onload = function () {
-                               Readconf();
-                               setTimeout(GetRandom(), 1000);
-                             }
+      Readconf();
+      GetRandom();
     </script>
 </body>
 
