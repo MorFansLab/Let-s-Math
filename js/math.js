@@ -1,10 +1,11 @@
 function GetRandomNum(Min, Max) {
   Max = parseInt(Max);
   Min = parseInt(Min);
-  var Range = Max - Min;
+  var Range = Max - Min - 1;
   var Rand = Math.random();
   return (Min + Math.round(Rand * Range));
 }
+
 function GetResult(First, Second, Operator) {
   First = parseInt(First);
   Second = parseInt(Second);
@@ -36,6 +37,7 @@ function GetResult(First, Second, Operator) {
   }
   return Result;
 }
+
 function Operation(op) {
   switch (op) {
     case 1:
@@ -59,6 +61,7 @@ function Operation(op) {
     message: '答案是：' + c
   });
 }
+
 function CheckResult(op) {
   switch (op) {
     case 1:
@@ -87,6 +90,7 @@ function CheckResult(op) {
       document.getElementById('Pinput').value = null;
       break;
   }
+
   if (a == b) {
     var c = '恭喜你，答对了！';
   } else {
@@ -100,8 +104,8 @@ function CheckResult(op) {
     }
 
   });
-
 }
+
 function GetRandom() {
 
   var Fmin = localStorage.Firstmin;
@@ -112,12 +116,11 @@ function GetRandom() {
 
   document.getElementById('Afirst').innerHTML = GetRandomNum(Fmin, Fmax);
   document.getElementById('Asecond').innerHTML = GetRandomNum(Smin, Smax);
-  // document.getElementById('Sfirst').innerHTML= GetRandomNum(Fmin,Fmax);
-  // document.getElementById('Ssecond').innerHTML= GetRandomNum(Smin,Smax);
   document.getElementById('Mfirst').innerHTML = GetRandomNum(Fmin, Fmax);
   document.getElementById('Msecond').innerHTML = GetRandomNum(Smin, Smax);
   document.getElementById('Pfirst').innerHTML = GetRandomNum(Fmin, Fmax);
   document.getElementById('Psecond').innerHTML = GetRandomNum(Smin, Smax);
+
   var a;
   var b;
   do {
@@ -129,24 +132,14 @@ function GetRandom() {
   document.getElementById('Ssecond').innerHTML = b;
 
   do {
-    do {
-      a = GetRandomNum(Fmin, Fmax);
-      b = GetRandomNum(Smin, Smax);
-    }
-    while (a % b != 0);
-  }
-  while (a - b < 0);
+    a = GetRandomNum(Fmin, Fmax);
+    b = GetRandomNum(Smin, Smax);
+  } while (a % b != 0 && a - b < 0);
 
-  // do
-  // {
-  // a = GetRandomNum(Fmin,Fmax);
-  // b = GetRandomNum(Smin,Smax);
-  // }
-  // while (a%b != 0);
   document.getElementById('Dfirst').innerHTML = a;
   document.getElementById('Dsecond').innerHTML = b;
-
 }
+
 function Readconf() {
   console.log('loaded');
   if (!localStorage.Firstmin) {
@@ -170,16 +163,14 @@ function Readconf() {
     document.getElementById('Smax').value = localStorage.Secondmax;
   }
 }
+
 function Saveconf() {
-  console.log(localStorage.Firstmin);
-  console.log(localStorage.Firstmax);
-  console.log(localStorage.Secondmin);
-  console.log(localStorage.Secondmax);
+  console.log(localStorage.Firstmin, localStorage.Firstmax, localStorage.Secondmin, localStorage.Secondmax);
   var Fmin = document.getElementById('Fmin').value;
   var Fmax = document.getElementById('Fmax').value;
   var Smin = document.getElementById('Smin').value;
   var Smax = document.getElementById('Smax').value;
-  if (document.getElementById('Fmin').value.length == 0 || document.getElementById('Fmax').value.length == 0 || document.getElementById('Smin').value.length == 0 || document.getElementById('Smax').value.length == 0) {
+  if (Fmin.length == 0 || Fmax.value.length == 0 || Smin.value.length == 0 || Smax.value.length == 0) {
     mdui.alert('抱歉，信息填写不完整！');
   } else {
     localStorage.Firstmin = Fmin;
@@ -187,7 +178,4 @@ function Saveconf() {
     localStorage.Secondmin = Smin;
     localStorage.Secondmax = Smax;
   }
-
-
-
 }
