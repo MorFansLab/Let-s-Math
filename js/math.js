@@ -30,7 +30,7 @@ function GetResult(First, Second, Operator) {
       break;
     case 5:
       Result = null;
-      Result = First ^ Second;
+      Result = Math.pow(First, Second);
       break;
     default:
       Result = 'Error';
