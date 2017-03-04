@@ -27,6 +27,10 @@ function GetResult(First, Second, Operator) {
       Result = null;
       Result = First / Second;
       break;
+    case 5:
+      Result = null;
+      Result = First ^ Second;
+      break;
     default:
       Result = 'Error';
   }
@@ -45,6 +49,8 @@ function Operation(op) {
       break;
     case 4:
       var c = GetResult(document.getElementById('Dfirst').innerHTML, document.getElementById('Dsecond').innerHTML, 4); break;
+    case 5:
+      var c = GetResult(document.getElementById('Pfirst').innerHTML, document.getElementById('Psecond').innerHTML, 5); break;
     default:
       var c = 'Sorry，出现了点错误';
       break;
@@ -74,6 +80,11 @@ function CheckResult(op) {
       var a = parseInt(document.getElementById('Dinput').value);
       var b = GetResult(document.getElementById('Dfirst').innerHTML, document.getElementById('Dsecond').innerHTML, 4);
       document.getElementById('Dinput').value = null;
+      break;
+    case 5:
+      var a = parseInt(document.getElementById('Pinput').value);
+      var b = GetResult(document.getElementById('Pfirst').innerHTML, document.getElementById('Dsecond').innerHTML, 4);
+      document.getElementById('Pinput').value = null;
       break;
   }
   if (a == b) {
@@ -105,6 +116,8 @@ function GetRandom() {
   // document.getElementById('Ssecond').innerHTML= GetRandomNum(Smin,Smax);
   document.getElementById('Mfirst').innerHTML = GetRandomNum(Fmin, Fmax);
   document.getElementById('Msecond').innerHTML = GetRandomNum(Smin, Smax);
+  document.getElementById('Pfirst').innerHTML = GetRandomNum(Fmin, Fmax);
+  document.getElementById('Psecond').innerHTML = GetRandomNum(Smin, Smax);
   var a;
   var b;
   do {

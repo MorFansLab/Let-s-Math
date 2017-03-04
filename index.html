@@ -26,7 +26,7 @@
         <a href="#sub" class="mdui-ripple mdui-ripple-white">减法</a>
         <a href="#mul" class="mdui-ripple mdui-ripple-white">乘法</a>
         <a href="#division" class="mdui-ripple mdui-ripple-white">除法</a>
-        <a href="#power" class="mdui-ripple mdui-ripple-white" disabled>次方</a>
+        <a href="#power" class="mdui-ripple mdui-ripple-white">乘方</a>
       </div>
     </div>
   </header>
@@ -266,6 +266,54 @@
         </div>
       </div>
     </div>
+    <div id="power">
+      <div class="mdui-card">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">
+            Power
+          </div>
+          <div class="mdui-card-primary-subtitle">
+            乘方运算
+          </div>
+          <div class="mdui-card-content">
+            <div class="mdui-row">
+              <div class="mdui-col-xs-2">
+              </div>
+              <div class="mdui-col-xs-10">
+                <span id="Pfirst" class="mdui-typo-display-1">4568</span>
+              </div>
+            </div>
+            <div class="mdui-row">
+              <div class="mdui-col-xs-1">
+              </div>
+              <div class="mdui-col-xs-11">
+                <span class="mdui-typo-display-1-opacity">^</span>
+              </div>
+            </div>
+            <div class="mdui-row">
+              <div class="mdui-col-xs-2">
+              </div>
+              <div class="mdui-col-xs-10">
+                <span id="Psecond" class="mdui-typo-display-1">4568</span>
+              </div>
+            </div>
+            <div class="mdui-row">
+              <div class="mdui-col-xs-12">
+                <div class="mdui-textfield mdui-textfield-floating-label">
+                  <label class="mdui-textfield-label">结果</label>
+                  <input id="Pinput" class="mdui-textfield-input" maxlength="60" type="number" required>
+                  <div class="mdui-textfield-error">请输入正确的数字</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mdui-card-actions">
+            <button onclick="CheckResult(5);" class="mdui-btn mdui-ripple mdui-float-right">提交结果</button>
+            <button onclick="Operation(5);" class="mdui-btn mdui-ripple mdui-float-right">查看答案</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--<button class="mdui-fab mdui-color-theme-accent mdui-fab-fixed mdui-ripple"><i class="mdui-icon material-icons">&#xe145;</i></button>-->
 
 
@@ -292,8 +340,8 @@
     <script src="./js/math.js"></script>
     <!--<script src="./js/fuction.js"></script>-->
     <script>
-      Readconf();
-      GetRandom();
+                             Readconf();
+                             GetRandom();
     </script>
 </body>
 
