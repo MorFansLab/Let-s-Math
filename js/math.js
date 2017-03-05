@@ -105,12 +105,11 @@ function CheckResult(op) {
     onButtonClick: function () {
       GetRandom();
     }
-
   });
 }
 
 function GetRandom() {
-  
+
   var Fmin = localStorage.Firstmin;
   var Fmax = localStorage.Firstmax;
 
@@ -144,7 +143,7 @@ function GetRandom() {
 }
 
 function Readconf() {
-  console.log('loaded');
+  console.log('loaded', localStorage.Firstmin, localStorage.Firstmax, localStorage.Secondmin, localStorage.Secondmax);
   if (!localStorage.Firstmin) {
     localStorage.Firstmin = 5;
   } else {
@@ -170,19 +169,18 @@ function Readconf() {
   } else {
     document.getElementById('autoNew').checked = true;
   }
-}
-if (localStorage.CardLimt == 'false') {
+  if (localStorage.CardLimt == 'false') {
     document.getElementById('CardLimt').checked = false;
     document.getElementById('container').removeAttribute("style");
   } else {
     document.getElementById('CardLimt').checked = true;
     ///document.getElementById('container').style.cssText = 'max-width: 500px';
-    document.getElementById('container').setAttribute("style",'max-width: 500px');
+    document.getElementById('container').setAttribute("style", 'max-width: 500px');
   }
+}
 
 
 function Saveconf() {
-  console.log(localStorage.Firstmin, localStorage.Firstmax, localStorage.Secondmin, localStorage.Secondmax);
   var Fmin = document.getElementById('Fmin').value;
   var Fmax = document.getElementById('Fmax').value;
   var Smin = document.getElementById('Smin').value;
@@ -196,11 +194,7 @@ function Saveconf() {
     localStorage.Secondmax = Smax;
     localStorage.autoNew = document.getElementById('autoNew').checked;
     localStorage.CardLimt = document.getElementById('CardLimt').checked;
-    if(localStorage.CardLimt == "true"){
-      document.getElementById('container').setAttribute("style",'max-width: 500px');
-    }else{
-      document.getElementById('container').removeAttribute("style");
-    }
+    console.log('saved', localStorage.Firstmin, localStorage.Firstmax, localStorage.Secondmin, localStorage.Secondmax);
+    Readconf();
   }
-  console.log('saved');
 }
