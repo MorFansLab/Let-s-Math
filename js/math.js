@@ -1,13 +1,3 @@
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function () {
-    navigator.serviceWorker.register('fuction.js').then(function (registration) {
-      console.info('ServiceWorker registration successful', registration);
-    }).catch(function (err) {
-      console.error('ServiceWorker registration failed', err);
-    });
-  });
-}
-
 function GetRandomNum(Min, Max) {
   Max = parseInt(Max);
   Min = parseInt(Min);
