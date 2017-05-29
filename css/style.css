@@ -12,3 +12,9 @@ margin: 0;
 input[type=number] {
 -moz-appearance:textfield;
 }
+
+.mdui-chip{
+    margin-top: 20px;
+    float: right;
+}
+}

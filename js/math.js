@@ -141,8 +141,19 @@ function GetRandom() {
   document.getElementById('Dfirst').innerHTML = a;
   document.getElementById('Dsecond').innerHTML = b;
 }
-
+function Ialreadyread(){
+   localStorage.Firstuse = 1;
+}
 function Readconf() {
+  var inst = new mdui.Dialog('#frist_dialog');
+  var tab = new mdui.Tab('#help-tab');
+  document.getElementById('help-tab').addEventListener('open.mdui.dialog', function () {
+    tab.handleUpdate();
+  });
+  if(!localStorage.Firstuse){
+    inst.open();
+ 
+  }
   console.log('loaded', localStorage.Firstmin, localStorage.Firstmax, localStorage.Secondmin, localStorage.Secondmax);
   if (!localStorage.Firstmin) {
     localStorage.Firstmin = 5;

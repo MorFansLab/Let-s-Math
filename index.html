@@ -8,7 +8,10 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <meta name="format-detection" content="telephone=no"/>
   <meta name="theme-color" content="#2196F3">
-  <title>Let's Math</title>
+  <meta name="renderer" content="webkit">
+  <meta name="Keywords" content="MorFans Lab,来计算,Let's Math,在线练习算数app,运算练习">
+  <meta name="description" content="Let's Math是由MorFans Lab(MorFans.cn)编写的一款在线练习数学算数APP，您可以在手机上使用chrome浏览器添加到桌面，以便离线使用本APP！" />
+  <title>Let's Math - 来算数</title>
   <link rel="stylesheet" href="./css/theme.css">
   <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -17,7 +20,7 @@
   <header>
     <div class="mdui-appbar mdui-appbar-fixed">
       <div class="mdui-toolbar mdui-color-theme">
-        <span class="mdui-typo-title">Let's Math</span>
+        <span class="mdui-typo-title">Let's Math - 来算数</span>
         <div class="mdui-toolbar-spacer"></div>
         <a href="javascript:GetRandom();" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: '更换题目'}">
           <i class="mdui-icon material-icons">&#xe5d5;</i>
@@ -97,6 +100,45 @@
         <button onclick="Saveconf();" class="mdui-btn mdui-ripple" mdui-dialog-confirm>Save</button>
       </div>
     </div>
+    <!--第二个提示-->
+      <div class="mdui-dialog" id="frist_dialog">
+    <div class="mdui-dialog-title">[新手帮助] You're the new? </div>
+    <div class="mdui-dialog-content">请您花几分钟的时间阅读此提示内容<br />请点击相应的tab[标签]查看提示：<br />(点击空白处关闭)
+    <div class="mdui-tab mdui-tab-full-width" id="help-tab">
+    <a href="#help-tab1" class="mdui-ripple mdui-tab-active">这是什么东西？</a>
+    <a href="#help-tab2" class="mdui-ripple">我该如何使用？</a>
+    <a href="#help-tab3" class="mdui-ripple">如何离线使用？</a>
+  </div>
+  <div id="help-tab1" class="mdui-p-a-2">
+    <p>Let's Math 是一个在线的练习数学算数APP。</p>
+    <p>轻盈，您不需要为此特意去下载一个应用程序</p>
+    <p>快捷，只需要一个浏览器，您就可以在多终端畅玩</p>
+    <p>稳定，即使是一个网页也能保存您的个性设定</p>
+    <p>离线，在安卓上，您能离线使用本APP[需要Chrome]</p>
+    <p>美观，采用Material Design 设计风格精心设计</p>
+  </div>
+  <div id="help-tab2" class="mdui-p-a-2">
+    <p>如果您是第一次使用，请先点击右上角的设置按钮：</p>
+    <p>1.设定您的使用习惯</p>
+    <p>2.设定数字范围</p>
+    <p>3.点击&lt;Save&gt;按钮</p>
+    <p>4.之后您就能在Tab栏里选择您需要练习的项目了</p>
+    <p>5.点击&lt;更换题目&gt;按钮换题</p>
+  </div>
+  <div id="help-tab3" class="mdui-p-a-2">
+    <p>离线使用我们需要使用到Chrome浏览器，在安卓手机上下载Chrome浏览器：</p>
+    <p>1.在Chrome浏览器内打开本页面</p>
+    <p>2.点击Chrome浏览器左上角按钮&lt;添加到桌面&gt;</p>
+    <p>3.添加以后在桌面寻找 您添加的图标即可离线使用</p>
+    <p>您，准备好了吗？</p>
+  </div>
+  </div>
+      <div class="mdui-dialog-actions">
+      <button class="mdui-btn mdui-ripple" mdui-dialog-cancel>下次提示</button>
+      <button onclick="Ialreadyread();" class="mdui-btn mdui-ripple" mdui-dialog-confirm>我知道了</button>
+    </div>
+</div>
+
     <div id="add">
       <div class="mdui-card">
         <div class="mdui-card-primary">
@@ -337,6 +379,11 @@
         </div>
       </div>
     </div>
+    <div class="mdui-chip">
+      <a href="http://lab.morfans.cn" target="_blank" style="color: rgba(0,0,0,.87);">
+  <img class="mdui-chip-icon" src="https://avatars0.githubusercontent.com/u/17177197?v=3&s=200"/>
+  <span class="mdui-chip-title">By:MorFans Lab</span></a>
+</div>
     <!--<button class="mdui-fab mdui-color-theme-accent mdui-fab-fixed mdui-ripple"><i class="mdui-icon material-icons">&#xe145;</i></button>-->
 
 
