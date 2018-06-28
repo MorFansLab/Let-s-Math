@@ -95,7 +95,7 @@ function CheckResult(op) {
     var c = '恭喜你，答对了！';
     if (localStorage.autoNew == 'true') {
       GetRandom();
-    }
+    } 
   } else {
     var c = '答错了，再试试？';
   }
@@ -157,24 +157,21 @@ function Readconf() {
   console.log('loaded', localStorage.Firstmin, localStorage.Firstmax, localStorage.Secondmin, localStorage.Secondmax);
   if (!localStorage.Firstmin) {
     localStorage.Firstmin = 5;
-  } else {
-    document.getElementById('Fmin').value = localStorage.Firstmin;
   }
+  document.getElementById('Fmin').value = localStorage.Firstmin;
   if (!localStorage.Firstmax) {
     localStorage.Firstmax = 900;
-  } else {
-    document.getElementById('Fmax').value = localStorage.Firstmax;
   }
+  document.getElementById('Fmax').value = localStorage.Firstmax;
   if (!localStorage.Secondmin) {
     localStorage.Secondmin = 2;
-  } else {
-    document.getElementById('Smin').value = localStorage.Secondmin;
   }
+  document.getElementById('Smin').value = localStorage.Secondmin;
   if (!localStorage.Secondmax) {
     localStorage.Secondmax = 900;
-  } else {
-    document.getElementById('Smax').value = localStorage.Secondmax;
   }
+  document.getElementById('Smax').value = localStorage.Secondmax;
+  
   if (localStorage.autoNew == 'false') {
     document.getElementById('autoNew').checked = false;
   } else {
