@@ -91,21 +91,21 @@ function CheckResult(op) {
       break;
   }
 
+  var obj = {
+    buttonText: '换题',
+    onButtonClick: GetRandom
+  };
   if (a == b) {
-    var c = '恭喜你，答对了！';
+    obj.message = '恭喜你，答对了！';
     if (localStorage.autoNew == 'true') {
       GetRandom();
+      obj.buttonText = obj.onButtonClick = null;
+      console.log(obj);
     } 
   } else {
-    var c = '答错了，再试试？';
+    obj.message = '答错了，再试试？';
   }
-  mdui.snackbar({
-    message: c,
-    buttonText: '换题',
-    onButtonClick: function () {
-      GetRandom();
-    }
-  });
+  mdui.snackbar(obj);
 }
 
 function GetRandom() {
